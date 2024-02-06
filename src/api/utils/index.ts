@@ -67,11 +67,6 @@ export const getHeader = async (): Promise<Header> => {
     const { data } = await get(API.GET.HEADER);
     const menuList = (data.menuList || []).map((item: any) => ({
       ...item.topMenu_id,
-      type: item.topMenu_id.type.value,
-      children: item.topMenu_id.children.map((child: any) => ({
-        ...child,
-        type: child.type.value,
-      })),
     }));
 
     return {
@@ -94,7 +89,6 @@ export const getFooter = async (): Promise<Footer> => {
     const { data } = await get(API.GET.FOOTER);
     const menuList = (data.menuList || []).map((item: any) => ({
       ...item.bottomMenu_id,
-      type: item.bottomMenu_id.type,
     }));
     const socialMediaList = (data.socialMediaList || []).map((item: any) => ({
       ...item.socialMedia_id,

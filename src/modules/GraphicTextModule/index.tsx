@@ -3,9 +3,10 @@ import HomeTwoColumnsCard from '@/components/HomeTwoColumnsCard';
 import styles from './styles.module.scss';
 import { motion } from 'framer-motion';
 import { INITIAL, variantDownToUp, VIEWPORT, WHILE_IN_VIEW } from '@/constants/motion';
-import { IGraphicTextModule } from '@/types/modules/graphicTextModule';
+import { GraphicTextModuleType, IGraphicTextModule } from '@/types/modules/graphicTextModule';
 import { s3Url } from '@/constants/network';
 import useGetVertical from '@/hooks/useGetVertical';
+import TopPicture from '../TopPicture';
 
 export interface GraphicTextModuleProps {
   module: IGraphicTextModule;
@@ -16,6 +17,10 @@ const DEFAULT_PADDING_VERTICAL = 120;
 export default function GraphicTextModule({ module }: GraphicTextModuleProps) {
   const { getVertical } = useGetVertical();
   const { paddingVertical, defaultBackgroundColor } = module.commonStyles;
+  if (module.type === GraphicTextModuleType.TopPicture_BottomText) {
+    return <TopPicture module={module} />;
+  }
+
   return (
     <motion.div initial={INITIAL} whileInView={WHILE_IN_VIEW} viewport={VIEWPORT}>
       <section

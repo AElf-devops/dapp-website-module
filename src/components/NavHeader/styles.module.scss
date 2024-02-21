@@ -134,7 +134,7 @@
 
       &:hover {
         color: $brand;
-        background: rgba(222, 226, 232, 0.3);
+        background: $hover-bg;
       }
       &:nth-last-child(1) {
         margin-bottom: 0;

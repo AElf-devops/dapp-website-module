@@ -77,6 +77,8 @@ export const getHeader = async (): Promise<Header> => {
       actionButton: data.actionButton ? formatCommonButton(data.actionButton) : undefined,
       commonStyles: {
         defaultBackgroundColor: data.defaultBackgroundColor || undefined,
+        firstMenuDefaultFontColor: data.firstMenuDefaultFontColor || undefined,
+        firstMenuFontHoverColor: data.firstMenuFontHoverColor || undefined,
       },
     };
   } catch (error) {
@@ -106,6 +108,8 @@ export const getFooter = async (): Promise<Footer> => {
       commonStyles: {
         defaultBackgroundColor: data.defaultBackgroundColor || undefined,
         dividingLineColor: data.dividingLineColor || undefined,
+        secondMenuDefaultFontColor: data.secondMenuDefaultFontColor || undefined,
+        secondMenuFontHoverColor: data.secondMenuFontHoverColor || undefined,
       },
     };
   } catch (error) {
@@ -152,7 +156,10 @@ const formatModule = (moduleItem: any): Module | undefined => {
         buttonList: formatButtonList(moduleItem.buttonList),
         descriptionList: formatDescriptionList(moduleItem.descriptionList),
         commonStyles: {
-          paddingVertical: moduleItem.paddingVertical || undefined,
+          paddingTop: moduleItem.paddingTop || undefined,
+          paddingBottom: moduleItem.paddingBottom || undefined,
+          mobilePaddingTop: moduleItem.mobilePaddingTop || undefined,
+          mobilePaddingBottom: moduleItem.mobilePaddingBottom || undefined,
           defaultBackgroundColor: moduleItem.defaultBackgroundColor || undefined,
         },
       };
@@ -171,7 +178,10 @@ const formatModule = (moduleItem: any): Module | undefined => {
         buttonList: formatButtonList(moduleItem.buttonList) as CommonButtonComponent[],
         type: moduleItem.type,
         commonStyles: {
-          paddingVertical: moduleItem.paddingVertical || undefined,
+          paddingTop: moduleItem.paddingTop || undefined,
+          paddingBottom: moduleItem.paddingBottom || undefined,
+          mobilePaddingTop: moduleItem.mobilePaddingTop || undefined,
+          mobilePaddingBottom: moduleItem.mobilePaddingBottom || undefined,
           defaultBackgroundColor: moduleItem.defaultBackgroundColor || undefined,
         },
       };
@@ -187,7 +197,10 @@ const formatModule = (moduleItem: any): Module | undefined => {
         },
         dataArray: formatDescriptionList(moduleItem.dataArray),
         commonStyles: {
-          paddingVertical: moduleItem.paddingVertical || undefined,
+          paddingTop: moduleItem.paddingTop || undefined,
+          paddingBottom: moduleItem.paddingBottom || undefined,
+          mobilePaddingTop: moduleItem.mobilePaddingTop || undefined,
+          mobilePaddingBottom: moduleItem.mobilePaddingBottom || undefined,
           defaultBackgroundColor: moduleItem.defaultBackgroundColor || undefined,
           defaultCardBackgroundColor: moduleItem.defaultCardBackgroundColor || undefined,
           defaultImgContainerBackgroundColor: moduleItem.defaultImgContainerBackgroundColor || undefined,
@@ -202,7 +215,10 @@ const formatModule = (moduleItem: any): Module | undefined => {
         },
         list: formatPartnerList(moduleItem.list),
         commonStyles: {
-          paddingVertical: moduleItem.paddingVertical || undefined,
+          paddingTop: moduleItem.paddingTop || undefined,
+          paddingBottom: moduleItem.paddingBottom || undefined,
+          mobilePaddingTop: moduleItem.mobilePaddingTop || undefined,
+          mobilePaddingBottom: moduleItem.mobilePaddingBottom || undefined,
           defaultBackgroundColor: moduleItem.defaultBackgroundColor || undefined,
           defaultCardBackgroundColor: moduleItem.defaultCardBackgroundColor || undefined,
         },
@@ -217,7 +233,10 @@ const formatModule = (moduleItem: any): Module | undefined => {
         descriptionList: formatDescriptionList(moduleItem.descriptionList),
         buttonList: formatButtonList(moduleItem.buttonList),
         commonStyles: {
-          paddingVertical: moduleItem.paddingVertical || undefined,
+          paddingTop: moduleItem.paddingTop || undefined,
+          paddingBottom: moduleItem.paddingBottom || undefined,
+          mobilePaddingTop: moduleItem.mobilePaddingTop || undefined,
+          mobilePaddingBottom: moduleItem.mobilePaddingBottom || undefined,
           defaultBackgroundColor: moduleItem.defaultBackgroundColor || undefined,
         },
       };
@@ -237,7 +256,10 @@ const formatModule = (moduleItem: any): Module | undefined => {
           : undefined,
         featureList: formatFeatureList(moduleItem.featureList),
         commonStyles: {
-          paddingVertical: moduleItem.paddingVertical || undefined,
+          paddingTop: moduleItem.paddingTop || undefined,
+          paddingBottom: moduleItem.paddingBottom || undefined,
+          mobilePaddingTop: moduleItem.mobilePaddingTop || undefined,
+          mobilePaddingBottom: moduleItem.mobilePaddingBottom || undefined,
           defaultBackgroundColor: moduleItem.defaultBackgroundColor || undefined,
           defaultCardBackgroundColor: moduleItem.defaultCardBackgroundColor || undefined,
         },
@@ -253,7 +275,10 @@ const formatModule = (moduleItem: any): Module | undefined => {
           : undefined,
         carouselList: formatCarouselList(moduleItem.carouselList),
         commonStyles: {
-          paddingVertical: moduleItem.paddingVertical || undefined,
+          paddingTop: moduleItem.paddingTop || undefined,
+          paddingBottom: moduleItem.paddingBottom || undefined,
+          mobilePaddingTop: moduleItem.mobilePaddingTop || undefined,
+          mobilePaddingBottom: moduleItem.mobilePaddingBottom || undefined,
           defaultBackgroundColor: moduleItem.defaultBackgroundColor || undefined,
         },
       };

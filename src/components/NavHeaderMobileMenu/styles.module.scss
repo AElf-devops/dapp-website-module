@@ -29,17 +29,20 @@
   height: 64px;
   align-items: center;
   cursor: pointer;
-
+  color:  var(--firstMenuDefaultFontColor);
   svg {
     @include rotate(180deg, 0.2s);
+    path {
+      fill: var(--firstMenuDefaultFontColor);
+    }
   }
 
   &:hover {
     span {
-      color: $brand;
+      color: var(--firstMenuFontHoverColor);
     }
     svg path {
-      fill: $brand;
+      fill: var(--firstMenuFontHoverColor);
     }
   }
 }

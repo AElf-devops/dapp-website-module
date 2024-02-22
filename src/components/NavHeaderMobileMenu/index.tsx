@@ -95,7 +95,7 @@ export default function NavHeaderMobileMenu({ isOpen = false, data, callback }: 
                       ? () => switchPage(item.type, item.path, onClose)
                       : () => showSecondMenus(index)
                   }>
-                  <span className="text-black-btn overflow-x-hidden">{item.title}</span>
+                  <span className="header-nav-btn overflow-x-hidden">{item.title}</span>
                   {item?.children?.length > 0 && <MenuArrowSVG />}
                 </div>
                 {item?.children?.length > 0 && (

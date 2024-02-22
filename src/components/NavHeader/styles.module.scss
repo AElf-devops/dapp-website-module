@@ -41,9 +41,13 @@
   width: 20px;
   height: 10px;
   margin: auto;
+  svg path {
+    fill: var(--firstMenuFontHoverColor);
+  }
 }
 
 .actionButton {
+  font-size: 16px;
   height: 48px;
   border-radius: 6px;
   display: flex;
@@ -68,28 +72,19 @@
 
   .firstMenuWithChild {
     cursor: pointer;
-    
     svg {
       margin-left: 12px;
       @include rotate(0, 0.2s);
-    }
-  }
-  .firstMenuWithChildAndBlueStyle {
-    svg path {
-      fill: white;
-    }
-    &:hover {
-      svg path {
-        fill: white;
+      path {
+        fill: var(--firstMenuDefaultFontColor);
       }
     }
-  }
-  .firstMenuWithChildAndWhiteStyle {
-    &:hover {
+
+    &:hover{
       svg path {
-        fill: $brand;
+        fill: var(--firstMenuFontHoverColor);
       }
-    }
+    } 
   }
 
   .rotateSvg {

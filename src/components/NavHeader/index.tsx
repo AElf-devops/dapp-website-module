@@ -2,12 +2,13 @@ import clsx from 'clsx';
 import { Popover } from 'antd';
 import CommonImage from '@/components/CommonImage';
 import { NavigationType, ROUTER } from '@/constants/enum';
-import { CSSProperties, useState } from 'react';
+import { CSSProperties, useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 import { iconMenuGray, iconNavSelectedBlue } from '@/assets/images';
 import NavHeaderMobileMenu from '@/components/NavHeaderMobileMenu';
 import { jumpOrScrollToTop, openWithBlank, switchPage } from '@/utils/router';
 import MenuArrowSVG from '@/components/SVGComponents/MenuArrowSVG';
+import NavSelectedSVG from '../SVGComponents/NavSelectedSVG';
 import { Header, SecondMenu, TopMenu } from '@/types/global/header';
 import { s3Url } from '@/constants/network';
 
@@ -58,6 +59,21 @@ export default function NavHeader({ className, style, path = ROUTER.DEFAULT, dat
     );
   };
 
+  useEffect(() => {
+    if (!data?.commonStyles) {
+      return;
+    }
+    if (typeof document !== 'undefined') {
+      const { firstMenuDefaultFontColor, firstMenuFontHoverColor } = data?.commonStyles || {};
+      if (firstMenuDefaultFontColor) {
+        document?.body.style.setProperty('--firstMenuDefaultFontColor', firstMenuDefaultFontColor);
+      }
+      if (firstMenuFontHoverColor) {
+        document?.body.style.setProperty('--firstMenuFontHoverColor', firstMenuFontHoverColor);
+      }
+    }
+  }, [data]);
+
   return (
     <header
       id="website-header"
@@ -106,12 +122,11 @@ export default function NavHeader({ className, style, path = ROUTER.DEFAULT, dat
                         onOpenChange={(open) => showSecondMenus(idx, open)}>
                         <div
                           className={clsx([
-                            'text-black-btn',
-                            item.path === path ? 'text-black-btn-select' : '',
+                            'header-nav-btn',
+                            item.path === path ? 'header-nav-btn-select' : '',
                             'flex-center',
                             styles.firstMenuWithChild,
                             item?.isShowSecondMenus ? styles.rotateSvg : null,
-                            styles.firstMenuWithChildAndWhiteStyle,
                           ])}>
                           {item.title}
                           <MenuArrowSVG />
@@ -119,17 +134,13 @@ export default function NavHeader({ className, style, path = ROUTER.DEFAULT, dat
                       </Popover>
                     ) : (
                       <div className={styles.linkBtnWrap} onClick={() => switchPage(item.type, item.path)}>
-                        <div className={clsx(['text-black-btn', item.path === path ? 'text-black-btn-select' : ''])}>
+                        <div className={clsx(['header-nav-btn', item.path === path ? 'header-nav-btn-select' : ''])}>
                           {item.title}
                         </div>
                         {item.path === path && (
-                          <CommonImage
-                            src={iconNavSelectedBlue}
-                            className={styles.btnUnderline}
-                            alt="NavHeaderSelect"
-                            width={20}
-                            height={10}
-                          />
+                          <div className={styles.btnUnderline}>
+                            <NavSelectedSVG />
+                          </div>
                         )}
                       </div>
                     )}

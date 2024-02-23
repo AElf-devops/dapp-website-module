@@ -8,14 +8,10 @@ export type WebsiteNetworkConfig = {
 export const BackEndNetWorkMap: Record<string, WebsiteNetworkConfig> = {
   DAPP: {
     dev: {
-      name: 'aelf Testnet',
-      networkType: 'TESTNET',
       cmsUrl: 'https://xxx/cms/',
       s3Url: 'https://xxx-dev.s3.ap-northeast-1.amazonaws.com/',
     },
     mainnet: {
-      name: 'aelf Mainnet',
-      networkType: 'MAIN',
       cmsUrl: 'https://xxx/',
       s3Url: 'https://xxx.s3.ap-northeast-1.amazonaws.com/',
     },

@@ -79,6 +79,7 @@ export default function BrandModule({ type, moduleData }: BrandModuleProps) {
                     fontColor={btn.commonStyles.default?.fontColor}
                     backgroundColor={btn.commonStyles.default?.backgroundColor}
                     borderColor={btn.commonStyles.default?.borderColor}
+                    width={btn.commonStyles.width ? btn.commonStyles.width + 'px' : 'auto'}
                     onClick={() => openWithBlank(btn.link?.url, btn.link?.target)}
                   />
                 );

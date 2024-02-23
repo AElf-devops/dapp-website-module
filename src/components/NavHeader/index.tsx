@@ -11,6 +11,7 @@ import MenuArrowSVG from '@/components/SVGComponents/MenuArrowSVG';
 import NavSelectedSVG from '../SVGComponents/NavSelectedSVG';
 import { Header, SecondMenu, TopMenu } from '@/types/global/header';
 import { s3Url } from '@/constants/network';
+import MenuGraySVG from '../SVGComponents/MenuGraySVG';
 
 export interface INavHeaderProps {
   className?: string;
@@ -98,16 +99,9 @@ export default function NavHeader({ className, style, path = ROUTER.DEFAULT, dat
         <NavHeaderMobileMenu isOpen={isOpenMenu} data={data} callback={onCloseMenu} />
 
         <div>
-          <CommonImage
-            src={iconMenuGray}
-            className={styles.menuIcon}
-            style={{ width: 24, height: 24, cursor: 'pointer' }}
-            width={24}
-            height={24}
-            alt="websiteMenu"
-            onClick={onOpenMenu}
-            priority
-          />
+          <div className={styles.menuIcon} style={{ cursor: 'pointer' }} onClick={onOpenMenu}>
+            <MenuGraySVG />
+          </div>
           <div className={styles.menus}>
             {Array.isArray(menuData) &&
               menuData.map((item, idx) => {

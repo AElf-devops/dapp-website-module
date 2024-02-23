@@ -63,6 +63,9 @@
 
 .menuIcon {
   display: none;
+  svg path {
+    stroke: $primary-text;
+  }
 }
 
 .menus {

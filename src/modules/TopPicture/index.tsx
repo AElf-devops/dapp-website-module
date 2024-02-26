@@ -11,8 +11,6 @@ export interface FeatureDescModuleProps {
   module: IGraphicTextModule;
 }
 
-const DEFAULT_PADDING_VERTICAL = 120;
-
 export default function TopPicture({ module }: FeatureDescModuleProps) {
   const { getVertical } = useGetVertical();
   const { defaultBackgroundColor } = module.commonStyles || {};

@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_Analytics_ID || '';
+  const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || '';
   return (
     <html lang="en">
       <body>{children}</body>

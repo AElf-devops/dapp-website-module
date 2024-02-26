@@ -33,7 +33,11 @@ export default function GraphicTextModule({ module }: GraphicTextModuleProps) {
           <motion.div variants={variantDownToUp(0)}>
             <div className={clsx(['page-container', styles.sectionTitle, styles.graphicTextModuleTitle])}>
               {module.title.text}
-              {!!module.title.subText && <div className={styles.sectionSubTitle}>{module.title.subText}</div>}
+              {!!module.title.subText && (
+                <div className={styles.sectionSubTitle} style={{ color: module.commonStyles?.fontColor }}>
+                  {module.title.subText}
+                </div>
+              )}
             </div>
           </motion.div>
         )}
